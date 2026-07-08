@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #1a1214;
+  --primary: #7c3e46;
+  --primary-dark: #5e2f35;
+  --primary-light: #a85a64;
+  --primary-muted: #f5ecee;
+  --secondary: #ffffff;
+  --muted: #6b5b5e;
+  --muted-foreground: #8a787b;
+  --border: #e8dedf;
+  --ring: #7c3e46;
+  --shadow-soft: 0 4px 24px -4px rgb(124 62 70 / 0.08);
+  --shadow-elevated: 0 12px 40px -8px rgb(124 62 70 / 0.12);
+  --gradient-primary: linear-gradient(135deg, #7c3e46 0%, #a85a64 100%);
+  --gradient-subtle: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #faf7f7 50%,
+    #f5ecee 100%
+  );
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-light: var(--primary-light);
+  --color-primary-muted: var(--primary-muted);
+  --color-secondary: var(--secondary);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --font-sans: var(--font-poppins);
+  --radius-sm: 0.75rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2rem;
+  --radius-2xl: 2.5rem;
+  --radius-full: 9999px;
+  --shadow-soft: var(--shadow-soft);
+  --shadow-elevated: var(--shadow-elevated);
+}
+
+*,
+*::before,
+*::after {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-poppins), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--primary-muted);
+  color: var(--primary-dark);
+}
+
+.bg-gradient-subtle {
+  background: var(--gradient-subtle);
+}
+
+.bg-gradient-primary {
+  background: var(--gradient-primary);
+}
+
+.legal-prose {
+  color: var(--muted);
+  font-size: 1.125rem;
+  line-height: 1.8;
+}
+
+.legal-prose > * + * {
+  margin-top: 1.25rem;
+}
+
+.legal-prose h2 {
+  margin-top: 2.75rem;
+  margin-bottom: 0.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+  color: var(--foreground);
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+.legal-prose h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.legal-prose h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--foreground);
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.legal-prose p {
+  color: var(--muted);
+}
+
+.legal-prose ul,
+.legal-prose ol {
+  margin-top: 0.75rem;
+  padding-left: 1.5rem;
+}
+
+.legal-prose ul {
+  list-style-type: disc;
+}
+
+.legal-prose ol {
+  list-style-type: decimal;
+}
+
+.legal-prose li {
+  margin-top: 0.625rem;
+  padding-left: 0.25rem;
+}
+
+.legal-prose li::marker {
+  color: var(--primary);
+}
+
+.legal-prose a {
+  color: var(--primary);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+.legal-prose a:hover {
+  color: var(--primary-dark);
+}
+
+.legal-prose table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 1.5rem;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.legal-prose th,
+.legal-prose td {
+  border: 1px solid var(--border);
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.legal-prose th {
+  background: var(--primary-muted);
+  color: var(--foreground);
+  font-weight: 600;
+}
